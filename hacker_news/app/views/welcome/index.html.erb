@@ -1,11 +1,14 @@
-<h1>Welcome To Our Blog Page</h1>
+<h1>Welcome to the Hacker News clone!</h1>
 
-<h5>List all the posts here</h5>
+<h5>Here are your current posts</h5>
 <div>
   <% if session[:user_id] %>
   <% @posts.each do |post| %>
-    <%= render post %>
+    <%= post.title %>
     <br>
+    <%= post.body %>
+    <br>
+    <%= my_date(post.created_at) %>
     <br>
   <% end %>
 </div>
