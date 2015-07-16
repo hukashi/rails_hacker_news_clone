@@ -1,25 +1,18 @@
-<h1>Welcome to the Hacker News clone!</h1>
-
-<h5>Here are your current posts</h5>
+<h2>Here are your current posts</h2>
 <div>
   <% if session[:user_id] %>
-  <% @posts.each do |post| %>
-    <%= post.title %>
+    <% @posts.each do |post| %>
     <br>
-    <%= post.body %>
     <br>
-    <%= my_date(post.created_at) %>
-    <br>
-  <% end %>
+    <% end %>
 </div>
 <br>
-<%= button_to 'View my posts', user_posts_path(@user), method: :get %>
-<%= button_to 'Create a new post', new_user_post_path(@user), method: :get %>
+    <%= button_to 'View my posts', user_posts_path(@user), method: :get %>
+    <%= button_to 'Create a new post', new_user_post_path(@user), method: :get %>
   <% else %>
     <% @posts.each do |post| %>
     <%= render post %>
-     <br>
-  <br>
+    <br>
+    <br>
+    <% end %>
   <% end %>
-
-<% end %>
