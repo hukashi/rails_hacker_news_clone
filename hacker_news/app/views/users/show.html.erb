@@ -1,0 +1,10 @@
+<h2>Hello <%= @user.username %></h2>
+<h3>Here is your profile</h3>
+
+<div class='user_profile'>
+  <div>Username: <%= @user.username %></div>
+  <div>First Name: <%= @user.first_name %></div>
+  <div>Last Name: <%= @user.last_name %></div>
+</div>
+<br>
+<%= button_to 'edit', edit_user_path(@user), method: :get %>

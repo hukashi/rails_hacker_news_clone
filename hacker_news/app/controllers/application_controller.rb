@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logged_in
-  redirect('/') unless is_authenticated?
+  redirect_to root_path unless is_authenticated?
   end
 
   def is_authenticated?

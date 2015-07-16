@@ -1,0 +1,12 @@
+<h2>Here are all your posts, <%= @user.username %> !</h2>
+
+<div class='posts'>
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <%= button_to 'Edit this post', edit_post_path(post), method: :get %>
+    <br>
+    <%= button_to 'Delete this post', post_path(post), method: :delete %>
+    <br>
+  <% end %>
+
+</div>

@@ -1,6 +1,7 @@
-    <%= post.title %>
+    <h3><%= post.title %></h3>
+    <div><%= post.body %></div>
     <br>
-    <%= post.body %>
+    <div>Author: <%= post.user.username %> </div>
     <br>
-    <%= my_date(post.created_at) %>
+    <div><%= my_date(post.created_at) %></div>
     <br>
