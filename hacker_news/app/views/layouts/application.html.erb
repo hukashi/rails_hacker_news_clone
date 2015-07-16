@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HackerNews</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <h1>Hacker News Clone</h1>
+    <div id='nav_bar'>
+      <%= button_to 'Home', root_path, method: :get, class: 'btn' %>
+        <% if session[:user_id] %>
+          <%= button_to 'Profile', user_path(@user), method: :get, class: 'btn' %>
+          <%= button_to 'View your posts', posts_path, method: :get, class: 'btn' %>
+          <%= button_to 'Create a new post', new_post_path(@user), method: :get %>
+          <%= button_to 'Log Out', logout_path, method: :delete, class: 'btn' %>
+        <% else %>
+          <%= button_to 'Log In', login_path, method: :get, class: 'btn' %>
+          <%= button_to 'Sign Up', new_user_path, method: :get, class: 'btn' %>
+        <% end %>
+    </div>
+  </header>
+
+<%= yield %>
+
+</body>
+</html>

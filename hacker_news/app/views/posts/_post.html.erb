@@ -1,0 +1,8 @@
+    <div><%= link_to post.title, post_path(post) %></div>
+    <div>(Author: <%= post.user.username %>)</div>
+    <div><%= my_date(post.created_at) %></div>
+
+    <div class='comment_field'>
+      <div>Comments: <%= post.comments.count %></div>
+    </div>
+

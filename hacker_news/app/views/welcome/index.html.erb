@@ -1,0 +1,17 @@
+<h2>Here are the current posts</h2>
+<div>
+  <% if session[:user_id] %>
+    <% @posts.each do |post| %>
+      <%= render post %>
+    <br>
+    <br>
+    <% end %>
+</div>
+<br>
+  <% else %>
+    <% @posts.each do |post| %>
+    <%= render post %>
+    <br>
+    <br>
+    <% end %>
+  <% end %>
