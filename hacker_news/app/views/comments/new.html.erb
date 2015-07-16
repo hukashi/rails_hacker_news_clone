@@ -1,0 +1,13 @@
+<h2>Add a comment!</h2>
+
+<div class='form'>
+  <%= form_for([@post, @comment], url: :post_comments) do |f| %>
+    <div>
+      <%= f.label :body %>
+      <%= f.text_area :body, :rows => 20, :cols =>70 %>
+    </div>
+    <div>
+      <%= f.submit 'submit' %>
+    </div>
+  <% end %>
+</div>

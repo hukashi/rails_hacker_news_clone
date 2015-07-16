@@ -14,3 +14,15 @@
   <br>
 <% end %>
 
+<br>
+<%= button_to 'comment', new_post_comment_path(@post), method: :get, class: 'btn' %>
+<br>
+<h3>Comments</h3>
+<div class='comments'>
+  <% @comments.each do |comment| %>
+    <div class ='comment-body'><%= comment.body %></div>
+    <div>posted: <%= elapsed_time(comment.created_at) %></div>
+    <br>
+  <% end %>
+</div>
+
