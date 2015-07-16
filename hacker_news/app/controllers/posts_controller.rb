@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def new
     require_logged_in
-    @user = User.find_by(id: params[:user_id])
+    @user = User.find_by(id: session[:user_id])
     @post = Post.new
   end
 
