@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#delete'
 
+  # Remove all the explanatory comments.
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

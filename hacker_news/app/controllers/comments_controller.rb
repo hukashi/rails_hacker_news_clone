@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-
+  # if there were more actions here, you could do a before_action only on new and create
+  # something like before_action require_logged_in, only: [:new, :create]
   def new
     require_logged_in
     @comment = Comment.new
@@ -15,6 +16,7 @@ class CommentsController < ApplicationController
     comment.user = user
     comment.post = post
     comment.save!
+    # error handling
     redirect_to post_path(post)
   end
 
