@@ -30,6 +30,18 @@ class PostsController < ApplicationController
     @comments = Comment.where(post_id: @post.id)
   end
 
+  def upvote
+    @post = Post.find_by(id: params[:id])
+    if request.xhr? 
+      @post.increment!(:vote_count)
+      @total_count = @post.vote_count
+      @post_id = @post.id
+      render json: {total_count: @total_count, post_id: @post_id}.to_json
+    else
+      redirect_to root_path
+    end
+  end
+
   def edit
     require_logged_in
     @post = Post.find_by(id: params[:id])

@@ -1,8 +1,10 @@
+    <div class='post'>
     <div><%= link_to post.title, post_path(post) %></div>
     <div>(Author: <%= post.user.username %>)</div>
     <div><%= my_date(post.created_at) %></div>
-
+    <div>upvotes: <span id="<%='span' + post.id.to_s %>"><%= post.vote_count %></span></div>
+    <%= button_to 'upvote', upvote_path(post), form_class: 'upvote_form', method: :put %>
     <div class='comment_field'>
       <div>Comments: <%= post.comments.count %></div>
     </div>
-
+    </div>
